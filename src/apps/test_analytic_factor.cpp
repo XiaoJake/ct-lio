@@ -6,6 +6,7 @@
 #include "liw/lidarFactor.h"
 #include "liw/poseParameterization.h"
 #include "tools/tool_color_printf.hpp"
+#include <unordered_map>
 
 using namespace std;
 

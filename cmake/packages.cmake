@@ -60,8 +60,9 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 link_libraries(${CERES_LIBRARY_DIRS})
 
 #ceres
-find_package(Ceres 2 REQUIRED PATHS /home/zhaochengwei/workspace/3rdparty/ceres_210)
+# find_package(Ceres 2 REQUIRED PATHS /home/zhaochengwei/workspace/3rdparty/ceres_210)
 # find_package(Ceres REQUIRED PATHS /home/zhaochengwei/workspace/3rdparty/ceres_1.14)
+find_package(Ceres REQUIRED)
 include_directories( ${CERES_INCLUDE_DIRS})
 link_directories(${CERES_LIBRARY_DIRS})
 
@@ -70,24 +71,24 @@ set(3RDPARTY_DIR ${PROJECT_SOURCE_DIR}/../../../workspace/3rdparty)
 
 
 # find_package(G2O REQUIRED PATHS /home/zhaochengwei/workspace/3rdparty/g2o-20201223)
-set(G2O_INCLUDE_DIRS ${3RDPARTY_DIR}/g2o-20201223/include)
-set(G2O_LIBRARY_DIRS ${3RDPARTY_DIR}/g2o-20201223/lib)
+# set(G2O_INCLUDE_DIRS ${3RDPARTY_DIR}/g2o-20201223/include)
+# set(G2O_LIBRARY_DIRS ${3RDPARTY_DIR}/g2o-20201223/lib)
 # file(GLOB G2O_LIBRARIES ${G2O_LIBRARY_DIRS}/*.a ${G2O_LIBRARY_DIRS}/*.so*)
 
 # g2o 使用thirdparty中的
 # include_directories(${PROJECT_SOURCE_DIR}/thirdparty/g2o/)
-include_directories(${G2O_INCLUDE_DIRS})
-set(g2o_libs
-        ${G2O_LIBRARY_DIRS}/libg2o_stuff.so
-        ${G2O_LIBRARY_DIRS}/libg2o_core.so
-	# ${G2O_LIBRARY_DIRS}/libg2o_solver_cholmod.so
-        ${G2O_LIBRARY_DIRS}/libg2o_solver_dense.so
-        ${G2O_LIBRARY_DIRS}/libg2o_solver_csparse.so
-        ${G2O_LIBRARY_DIRS}/libg2o_csparse_extension.so
-        ${G2O_LIBRARY_DIRS}/libg2o_types_sba.so
-        ${CSPARSE_LIBRARY}
-        ${CHOLMOD_LIBRARY}
-        )
+# include_directories(${G2O_INCLUDE_DIRS})
+# set(g2o_libs
+#         ${G2O_LIBRARY_DIRS}/libg2o_stuff.so
+#         ${G2O_LIBRARY_DIRS}/libg2o_core.so
+# 	# ${G2O_LIBRARY_DIRS}/libg2o_solver_cholmod.so
+#         ${G2O_LIBRARY_DIRS}/libg2o_solver_dense.so
+#         ${G2O_LIBRARY_DIRS}/libg2o_solver_csparse.so
+#         ${G2O_LIBRARY_DIRS}/libg2o_csparse_extension.so
+#         ${G2O_LIBRARY_DIRS}/libg2o_types_sba.so
+#         ${CSPARSE_LIBRARY}
+#         ${CHOLMOD_LIBRARY}
+#         )
 
 # ros
 # 为了2D scan, pointcloud2
@@ -141,7 +142,7 @@ endif ()
 
     set(third_party_libs
             ${catkin_LIBRARIES}
-            ${g2o_libs}
+        #     ${g2o_libs}
             ${OpenCV_LIBS}
             ${PCL_LIBRARIES}
             ${CERES_LIBRARIES}

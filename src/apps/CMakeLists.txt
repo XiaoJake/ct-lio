@@ -1,5 +1,6 @@
 add_executable(${PROJECT_NAME}_eskf main_eskf.cpp  
                                common_utility.cpp)
+# add_dependencies(${PROJECT_NAME}_eskf ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(${PROJECT_NAME}_eskf 
                          ${PROJECT_NAME}.common
                          ${PROJECT_NAME}.pre
@@ -10,6 +11,7 @@ target_link_libraries(${PROJECT_NAME}_eskf
 
 add_executable(${PROJECT_NAME}_eskf_rosbag main_eskf_rosbag.cpp  
                         common_utility.cpp)
+# add_dependencies(${PROJECT_NAME}_eskf_rosbag ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(${PROJECT_NAME}_eskf_rosbag 
                   ${PROJECT_NAME}.common
                   ${PROJECT_NAME}.pre

@@ -6,4 +6,3 @@ add_library(${PROJECT_NAME}.tools
 target_link_libraries(${PROJECT_NAME}.tools
         ${third_party_libs}
         )
-
